@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:flutter_trivia_anime/screens/start_screen.dart';
+import 'approutes.dart';
 
 
 class Splash extends StatefulWidget {

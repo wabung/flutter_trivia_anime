@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'tutorial1.dart';
+import 'approutes.dart';
 
 class StartScreen extends StatefulWidget {
   const StartScreen({super.key});
@@ -38,7 +38,7 @@ class _StartScreenState extends State<StartScreen> {
                 child:Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Tutorial1()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,

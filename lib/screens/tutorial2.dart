@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'approutes.dart';
 
-class Tutorial1 extends StatefulWidget {
-  const Tutorial1({super.key});
+class Tutorial2 extends StatefulWidget {
+  const Tutorial2({super.key});
 
   @override
-  State<Tutorial1> createState() => _Tutorial1State();
+  State<Tutorial2> createState() => _Tutorial2State();
 }
 
-class _Tutorial1State extends State<Tutorial1> {
+class _Tutorial2State extends State<Tutorial2> {
   @override
   Widget build(BuildContext context) {
     double anchura = MediaQuery.of(context).size.width;
@@ -48,18 +48,18 @@ class _Tutorial1State extends State<Tutorial1> {
                         
                         child: Column(
                           children: [
-                            Text("Trivia de Anime", style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold)),
+                            Text("Adivina el Opening", style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold)),
                             SizedBox(height: 20),
                             Image(
-                              image: AssetImage('../assets/images/adivinar.png'),
-                              width: 250,
+                              image: AssetImage('../assets/images/headphone.png'),
+                              width: 150,
                             ),
                           ],
                         ),
                       ),
                       SizedBox(height: 20),
                       Text(
-                        '"Preguntas con imágenes de personajes/series."\n\n"Dificultad progresiva por niveles."\n\n"Gana puntos y sube de rango."',
+                        '"Clips cortos de openings icónicos."\n\n"Vuelve a reproducir el fragmento si lo necesitas."\n\n"Comparte tu puntuación con amigos."',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
@@ -70,8 +70,24 @@ class _Tutorial1State extends State<Tutorial1> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Row(
+                            
                             children: [
-                              SizedBox(width: 90),
+                              IconButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
+                            },
+                            icon: Icon(Icons.arrow_back, color: Colors.white, size: 30),
+                          ),
+                          SizedBox(width: 40),
+                              Container(
+                                width: 12,
+                                height: 12,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white.withValues(alpha: 0.5),
+                                ),
+                              ),
+                              SizedBox(width: 8),
                               Container(
                                 width: 12,
                                 height: 12,
@@ -89,22 +105,12 @@ class _Tutorial1State extends State<Tutorial1> {
                                   color: Colors.white.withValues(alpha: 0.5),
                                 ),
                               ),
-                              SizedBox(width: 8),
-                              Container(
-                                width: 12,
-                                height: 12,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.white.withValues(alpha: 0.5),
-                                ),
-                              ),
                             ],
                           ),
-                          
                           SizedBox(width: 40),
                           IconButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Tutorial2()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Tutorial3()));
                             },
                             icon: Icon(Icons.arrow_forward, color: Colors.white, size: 30),
                           ),

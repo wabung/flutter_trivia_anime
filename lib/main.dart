@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/splash.dart';
+import 'screens/approutes.dart';
 
 void main() {
   runApp(const MyApp());
