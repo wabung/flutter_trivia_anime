@@ -38,7 +38,7 @@ class _StartScreenState extends State<StartScreen> {
                 child:Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Tutorial1()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,

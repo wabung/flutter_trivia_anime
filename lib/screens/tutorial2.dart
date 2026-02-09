@@ -74,7 +74,7 @@ class _Tutorial2State extends State<Tutorial2> {
                             children: [
                               IconButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Tutorial1()));
                             },
                             icon: Icon(Icons.arrow_back, color: Colors.white, size: 30),
                           ),
