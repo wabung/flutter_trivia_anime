@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'approutes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../auth.dart';
-import 'approutes.dart';
 
-
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Register extends StatefulWidget {
+  const Register({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterState extends State<Register> {
 
   String? errorMessage;
 
@@ -21,35 +20,37 @@ class _LoginState extends State<Login> {
   String traducirError(dynamic error) {
     String errorString = error.toString().toLowerCase();
     
-    if (errorString.contains('user-not-found')) {
-      return 'No existe una cuenta con este correo electrónico';
-    } else if (errorString.contains('wrong-password')) {
-      return 'Contraseña incorrecta';
-    } else if (errorString.contains('email-already-in-use')) {
-      return 'Este correo electrónico ya está en uso';
-    } else if (errorString.contains('missing-password')) {
-      return 'Por favor ingresa una contraseña';
+    if (errorString.contains('email-already-in-use')) {
+      return 'Este correo electrónico ya está registrado';
     } else if (errorString.contains('weak-password')) {
       return 'La contraseña debe tener al menos 6 caracteres';
     } else if (errorString.contains('invalid-email')) {
-      return 'El correo electrónico no es válido';
+      return 'El formato del correo electrónico no es válido';
+    } else if (errorString.contains('missing-email')) {
+      return 'Por favor ingresa un correo electrónico';
+    } else if (errorString.contains('missing-password')) {
+      return 'Por favor ingresa una contraseña';
+    } else if (errorString.contains('operation-not-allowed')) {
+      return 'El registro con correo/contraseña no está habilitado';
     } else if (errorString.contains('network-request-failed')) {
       return 'Error de conexión. Verifica tu internet';
     } else if (errorString.contains('too-many-requests')) {
-      return 'Demasiados intentos. Intenta más tarde';
-    } else if (errorString.contains('invalid-credential')) {
-      return 'Credenciales inválidas';
+      return 'Demasiados intentos. Espera un momento e intenta de nuevo';
+    } else if (errorString.contains('requires-recent-login')) {
+      return 'Por seguridad, necesitas iniciar sesión de nuevo';
+    } else if (errorString.contains('admin-restricted-operation')) {
+      return 'Esta operación está restringida por el administrador';
     } else {
-      return 'Error al iniciar sesión. Intenta de nuevo';
+      return 'Error al registrar usuario. Verifica tus datos';
     }
   }
 
-  Future<void> signIn() async {
+    Future<void> signUp() async {
     try {
-      await Auth().signIn(_emailController.text, _passwordController.text);
+      await Auth().signUp(_emailController.text, _passwordController.text);
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const Login()),
       );
     } catch (e) {
       setState(() {
@@ -57,7 +58,6 @@ class _LoginState extends State<Login> {
       });
     }
   }
-
   @override
   Widget build(BuildContext context) {
     double anchura = MediaQuery.of(context).size.width;
@@ -98,9 +98,8 @@ class _LoginState extends State<Login> {
                     spacing: 30,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-
                       Text(
-                                  'Inicio de sesión',
+                                  'Registro de usuario',
                                   style: TextStyle(
                                     fontSize: 30,
                                     color: Colors.white,
@@ -151,9 +150,8 @@ class _LoginState extends State<Login> {
 
                       SizedBox(height: 50),
                       
-
                       GestureDetector(
-                        onTap: signIn,
+                        onTap: signUp,
                         child: Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 30,
@@ -177,29 +175,28 @@ class _LoginState extends State<Login> {
                               ),
                             ],
                           ),
-                          child:Text(
-                                  'Iniciar sesión',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                          child: Text(
+                            'Registrarme',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
-                      
 
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Register(),
+                              builder: (context) => const Login(),
                             ),
                           );
                         },
                         child: Text(
-                          'Registrarme',
+                          'Volver',
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
@@ -207,6 +204,7 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
+                      
                       Text(
                         errorMessage == null ? "" :
                         "$errorMessage",

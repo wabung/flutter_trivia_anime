@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "938095179454",
+    "project_id": "proyecto-firebase-trivia-anime",
+    "storage_bucket": "proyecto-firebase-trivia-anime.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938095179454:android:c2e6a776360c975549d0ef",
+        "android_client_info": {
+          "package_name": "com.example.flutter_trivia_anime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoAEwEvFHxLQSQ5meXoZMPxzfnOdHqjTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
