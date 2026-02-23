@@ -59,7 +59,7 @@ class _Tutorial1State extends State<Tutorial1> {
                       ),
                       SizedBox(height: 20),
                       Text(
-                        '"Preguntas con imágenes de personajes/series."\n\n"Dificultad progresiva por niveles."\n\n"Gana puntos y sube de rango."',
+                        '"Preguntas con imágenes de personajes."\n\n"Gana puntos y sube de rango."',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),

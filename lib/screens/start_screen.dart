@@ -26,7 +26,6 @@ class _StartScreenState extends State<StartScreen> {
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),
-              
           Positioned(
             bottom: altura * 0.3,
             left: 0,

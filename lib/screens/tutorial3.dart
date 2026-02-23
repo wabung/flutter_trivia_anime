@@ -60,10 +60,10 @@ class _Tutorial3State extends State<Tutorial3> {
                             ),
                           ],
                         ),
-                      ),
+                      ),  
                       SizedBox(height: 20),
                       Text(
-                        '"Historial de partidas y porcentaje de aciertos."\n\n"Racha máxima y mejores modos."\n\n"Ranking global y entre amigos."',
+                        '"Ranking de jugadores con mayor nivel."',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),

@@ -59,7 +59,7 @@ class _Tutorial2State extends State<Tutorial2> {
                       ),
                       SizedBox(height: 20),
                       Text(
-                        '"Clips cortos de openings icónicos."\n\n"Vuelve a reproducir el fragmento si lo necesitas."\n\n"Comparte tu puntuación con amigos."',
+                        '"Clips de openings icónicos."\n\n"Vuelve a reproducir el fragmento si lo necesitas."\n\n"Comparte tu puntuación con amigos."',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),

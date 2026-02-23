@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_trivia_anime/screens/ranking.dart';
 import 'approutes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../auth.dart';
+import '../services/score_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -62,7 +64,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     spacing: 20,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-
                       Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
@@ -78,11 +79,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-
-                      Text("Nivel: 1", style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
+                    // Esperar a que se obtenga el nivel antes de mostrarlo
+                      FutureBuilder<int>(
+                        future: ScoreService.obtenerNivel(),
+                        builder: (context, snapshot) {
+                          final nivel = snapshot.data ?? 0;
+                          return Text("Nivel: $nivel", style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          );
+                        },
                       ),
                       Expanded(
                         child: SingleChildScrollView(
@@ -91,18 +98,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             spacing: 10,
                             children: [
                             GestureDetector(
-                              /**
-                               * TODO: Implementar función de modos de juego
                                 onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const TriviaConfirm(),
+                                    builder: (context) => Confirm(tematica: 'TriviaImages'),
                                   ),
                                 );
                               },
-                               */
-                              
                               child:
                               Container(
                               width: anchura * 0.6,
@@ -126,18 +129,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             
                             ),
                             GestureDetector(
-                        /**
-                         * TODO: Implementar función de modos de juego
                           onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const TriviaConfirm(),
+                              builder: (context) => const Confirm(tematica: "TriviaOpenings"),
                             ),
                           );
                         },
-                         */
-                        
                         child:
                         Container(
                         width: anchura * 0.6,
@@ -158,20 +157,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-
                       ),
                       GestureDetector(
-                        /**
-                         * TODO: Implementar función de modos de juego
                           onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const TriviaConfirm(),
+                              builder: (context) => const Ranking(),
                             ),
                           );
                         },
-                         */
                         
                         child:
                         Container(
@@ -199,7 +194,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-
                       ),
                           ],
                         ),

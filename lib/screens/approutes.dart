@@ -6,3 +6,7 @@ export "tutorial3.dart";
 export "login.dart";
 export "register.dart";
 export "home_screen.dart";
+export "confirm.dart";
+export "trivia_images.dart";
+export "trivia_openings.dart";
+export 'ranking.dart';
