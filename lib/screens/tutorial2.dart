@@ -21,8 +21,9 @@ class _Tutorial2State extends State<Tutorial2> {
           child: Stack(
             children: [
               Image(
-                image: AssetImage('../assets/images/banner-anime.jpg'),
+                image: AssetImage('assets/images/banner-anime.jpg'),
                 width: anchura,
+                height: altura,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),
@@ -51,7 +52,7 @@ class _Tutorial2State extends State<Tutorial2> {
                             Text("Adivina el Opening", style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold)),
                             SizedBox(height: 20),
                             Image(
-                              image: AssetImage('../assets/images/headphone.png'),
+                              image: AssetImage('assets/images/headphone.png'),
                               width: 150,
                             ),
                           ],

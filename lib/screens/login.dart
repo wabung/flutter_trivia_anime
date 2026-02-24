@@ -69,8 +69,9 @@ class _LoginState extends State<Login> {
           child: Stack(
             children: [
               Image(
-                image: AssetImage('../assets/images/collage-manga.png'),
+                image: AssetImage('assets/images/collage-manga.png'),
                 width: anchura,
+                height: altura,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),
@@ -93,13 +94,14 @@ class _LoginState extends State<Login> {
                       end: Alignment.bottomRight,
                     ),
                   ),
-                  child: Column(
-                    spacing: 30,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                  child: SingleChildScrollView(
+                    child: Column(
+                        spacing: 30,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
 
-                      Text(
-                                  'Inicio de sesión',
+                          Text(
+                                      'Inicio de sesión',
                                   style: TextStyle(
                                     fontSize: 30,
                                     color: Colors.white,
@@ -219,9 +221,10 @@ class _LoginState extends State<Login> {
                           ),
                         ],
                         ),
-                      )
-                    ],
-                  ),
+                          )
+                        ],
+                      ),
+                    ),
                 ),
               ),
             ],

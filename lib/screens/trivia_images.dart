@@ -125,8 +125,9 @@ class _TriviaImagesState extends State<TriviaImages> {
           child: Stack(
             children: [
               Image(
-                image: AssetImage('../assets/images/collage-manga.png'),
+                image: AssetImage('assets/images/collage-manga.png'),
                 width: anchura,
+                height: altura,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),

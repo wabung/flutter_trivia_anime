@@ -70,8 +70,9 @@ class _RegisterState extends State<Register> {
           child: Stack(
             children: [
               Image(
-                image: AssetImage('../assets/images/collage-manga.png'),
+                image: AssetImage('assets/images/collage-manga.png'),
                 width: anchura,
+                height: altura,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),
@@ -94,12 +95,13 @@ class _RegisterState extends State<Register> {
                       end: Alignment.bottomRight,
                     ),
                   ),
-                  child: Column(
-                    spacing: 30,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Registro de usuario',
+                  child: SingleChildScrollView(
+                    child: Column(
+                        spacing: 30,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Registro de usuario',
                         style: TextStyle(
                           fontSize: 30,
                           color: Colors.white,
@@ -218,9 +220,10 @@ class _RegisterState extends State<Register> {
                           ),
                         ],
                         ),
-                      )
-                    ],
-                  ),
+                          )
+                        ],
+                      ),
+                    ),
                 ),
               ),
             ],

@@ -21,8 +21,9 @@ class _Tutorial3State extends State<Tutorial3> {
           child: Stack(
             children: [
               Image(
-                image: AssetImage('../assets/images/banner-anime.jpg'),
+                image: AssetImage('assets/images/banner-anime.jpg'),
                 width: anchura,
+                height: altura,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),
@@ -55,7 +56,7 @@ class _Tutorial3State extends State<Tutorial3> {
                             ),
                             SizedBox(height: 20),
                             Image(
-                              image: AssetImage('../assets/images/stats.png'),
+                              image: AssetImage('assets/images/stats.png'),
                               width: 150,
                             ),
                           ],

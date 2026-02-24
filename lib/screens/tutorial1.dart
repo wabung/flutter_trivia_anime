@@ -21,8 +21,9 @@ class _Tutorial1State extends State<Tutorial1> {
           child: Stack(
             children: [
               Image(
-                image: AssetImage('../assets/images/banner-anime.jpg'),
+                image: AssetImage('assets/images/banner-anime.jpg'),
                 width: anchura,
+                height: altura,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),
@@ -51,7 +52,7 @@ class _Tutorial1State extends State<Tutorial1> {
                             Text("Trivia de Anime", style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold)),
                             SizedBox(height: 20),
                             Image(
-                              image: AssetImage('../assets/images/adivinar.png'),
+                              image: AssetImage('assets/images/adivinar.png'),
                               width: 250,
                             ),
                           ],

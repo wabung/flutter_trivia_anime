@@ -35,8 +35,9 @@ class _RankingState extends State<Ranking> {
           child: Stack(
             children: [
               Image(
-                image: AssetImage('../assets/images/collage-manga.png'),
+                image: AssetImage('assets/images/collage-manga.png'),
                 width: anchura,
+                height: altura,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),

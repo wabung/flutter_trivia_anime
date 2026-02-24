@@ -21,8 +21,9 @@ class _StartScreenState extends State<StartScreen> {
           child: Stack(
             children: [
               Image(
-                image: AssetImage('../assets/images/banner-anime.jpg'),
+                image: AssetImage('assets/images/banner-anime.jpg'),
                 width: anchura,
+                height: altura,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),

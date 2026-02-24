@@ -36,8 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Stack(
             children: [
               Image(
-                image: AssetImage('../assets/images/collage-manga.png'),
+                image: AssetImage('assets/images/collage-manga.png'),
                 width: anchura,
+                height: altura,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),
@@ -120,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Text("Trivia de Anime", style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold)),
                                   SizedBox(height: 10),
                                   Image(
-                                    image: AssetImage('../assets/images/adivinar.png'),
+                                    image: AssetImage('assets/images/adivinar.png'),
                                     width: 150,
                                   ),
                                 ],
@@ -151,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text("Adivina el Opening", style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold)),
                             SizedBox(height: 10),
                             Image(
-                              image: AssetImage('../assets/images/headphone.png'),
+                              image: AssetImage('assets/images/headphone.png'),
                               width: 75,
                             ),
                           ],
@@ -188,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             SizedBox(height: 10),
                             Image(
-                              image: AssetImage('../assets/images/stats.png'),
+                              image: AssetImage('assets/images/stats.png'),
                               width: 75,
                             ),
                           ],

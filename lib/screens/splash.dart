@@ -29,7 +29,7 @@ class _SplashState extends State<Splash> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('../assets/images/logo.png', width: 200, height: 200),
+                Image.asset('assets/images/logo.png', width: 200, height: 200),
                 const SizedBox(height: 20),
                 const CircularProgressIndicator(constraints: BoxConstraints(minWidth: 100, minHeight: 100)),
               ],
