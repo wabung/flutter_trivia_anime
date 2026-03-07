@@ -5,7 +5,7 @@ class ScoreService {
   static final _firestore = FirebaseFirestore.instance;
   static final _auth = FirebaseAuth.instance;
 
-  /// Suma [correctas] al campo "respuestasCorrectas" del usuario actual
+  /// Suma correctas al campo "respuestasCorrectas" del usuario actual
   /// en la colección "usuarios".
   static Future<void> guardarPuntuacion(int correctas) async {
     final user = _auth.currentUser;
